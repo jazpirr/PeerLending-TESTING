@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="left-side">
+    <img class="side-image"  alt="Signup Side Image">
+  </div> 
+
+  
+  <div calss="right-side">
+    <div class="form-wrap">
+    <div class="logo-container">
+      <img class="logo" src="{% static 'images/logo.png' %}" alt="PeerLending Logo">
+      <h3>Join CIT-U Peer Lending Library</h3>
+      <p> Create your account to start lending and borrowing academic resources</p>
+    </div>
+
+    <form method="POST" novalidate>
+      {% csrf_token %}
+
+      {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+            <div class="message {{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+        
+      <div class="form-header">
+        <h3>Required Information</h3>
+        <hr class="section-line">
+      </div>
+      
+
+      
+
+      <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">
+          <img src="{% static 'images/email.png' %}" class="icon" alt="Email Icon">
+          Email</label>
+        {{ form.email }}
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">
+          <img src="{% static 'images/lock.png' %}" class="icon" alt="Lock Icon">
+          Password</label>
+        {{ form.password1 }}
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">
+          <img src="{% static 'images/lock.png' %}" class="icon" alt="Lock Icon">
+          Confirm Password</label>
+        {{ form.password2 }}
+      </div>
+
+      <div class="form-header">
+        <h3>Personal Information</h3>
+        <hr class="section-line">
+      </div>
+
+      <div class="name-row">
+        <div class="half form-group">
+          <label for="{{ form.first_name.id_for_label }}">
+            <img src="{% static 'images/user.png' %}" class="icon" alt="Person Icon">
+            First Name</label>
+          {{ form.first_name }}
+        </div>
+        <div class="half form-group">
+          <label for="{{ form.last_name.id_for_label }}">
+            <img src="{% static 'images/user.png' %}" class="icon" alt="Person Icon">
+            Last Name</label>
+          {{ form.last_name }}
+        </div>
+      </div>      
+
+      <div class="name-row">
+        <div class="half form-group">
+          <label for="id_birthday">
+              <img src="{% static 'images/calendar.png' %}" class="icon" alt="Calendar Icon">
+              Birthday
+          </label>
+          <input type="date" name="birthday" id="id_birthday" value="{{ form.birthday.value|default:'' }}">
+          {% if form.birthday.errors %}
+              <ul class="errorlist">
+                  {% for error in form.birthday.errors %}
+                      <li>{{ error }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+        </div>
+
+        <div class="half form-group">
+            <label for="{{ form.phone_number.id_for_label }}">
+                <img src="{% static 'images/phone.png' %}" class="icon" alt="Phone Icon">
+                Phone Number
+            </label>
+            {{ form.phone_number }}
+        </div>
+    </div>
+
+      <div class="btn-row horizontal">
+        <button type="submit" class="submit-btn">Create Account</button>
+        <a class="alt-btn" href="{% url 'login' %}">Already have an account? Sign In</a>
+    </div>
+    </form>
+    </div> 
+  </div>
+
+
+  
+
+</div>
+
+  
+</div>
+
+  
+
+
+{% endblock content %}

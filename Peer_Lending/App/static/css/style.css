@@ -1,0 +1,320 @@
+/* Global reset & font */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+  transition: 0.18s all ease-in-out;
+  
+}
+
+/* Body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+/* Section line */
+.section-line {
+  border-bottom: 2px solid #cccccc; 
+}
+
+/* Main container */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 300px; /* smaller gap so form can grow */
+  align-items: center;
+}
+
+/* Left-side image */
+.left-side img.side-image {
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+/* Right-side */
+.right-side {
+  flex: 1; /* takes remaining space */
+  display: flex;
+  justify-content: center;
+}
+
+/* Form container */
+.form-wrap {
+  background-color: #fff;
+  padding: 40px;
+  max-width: 600px; /* default for signup */
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Widened login form */
+.form-wrap.login-form {
+  width: 500px; /* login form wider */
+}
+
+/* Vertical buttons for login form */
+.form-wrap.login-form .btn-row.vertical {
+  flex-direction: column;
+  align-items: stretch; /* stretch buttons full width */
+  gap: 16px; /* spacing between buttons */
+  margin-top: 40px; /* space from inputs */
+}
+
+/* All buttons inside login form vertical row */
+.form-wrap.login-form .btn-row.vertical button.submit-btn,
+.form-wrap.login-form .btn-row.vertical a.alt-btn {
+  width: 100%; /* full width of parent form */
+  max-width: 100%; /* override any max-width */
+  border-radius: 5px;
+  padding: 12px 0; /* consistent height */
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Submit button specific styling */
+.form-wrap.login-form .btn-row.vertical button.submit-btn {
+  background: #800000;
+  color: #FFF;
+  border: 1px solid transparent;
+}
+
+.form-wrap.login-form .btn-row.vertical button.submit-btn:hover {
+  background: #fff;
+  color: #10182F;
+  border-color: #10182F;
+}
+
+/* Alt button (link) specific styling */
+.form-wrap.login-form .btn-row.vertical a.alt-btn {
+  background: #F0F2FB;
+  color: #10182F;
+  border: 1px solid #DAE1F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-wrap.login-form .btn-row.vertical a.alt-btn:hover {
+  background: #800000;
+  color: #FFF;
+  border-color: #10182F;
+}
+
+/* Extra link (forgot password) */
+.form-wrap.login-form .btn-row.vertical a.forgot-link {
+  color: #800000;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form-wrap.login-form .btn-row.vertical a.forgot-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Form headers */
+.form-header {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #800000;
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 16px;
+}
+
+/* Labels */
+.form-wrap form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #10182F;
+}
+
+/* Inputs */
+.form-wrap form input,
+.form-wrap form textarea,
+.form-wrap form select {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 5px;
+  border: 1px solid #DAE1F5;
+  background: #FFF;
+  color: #545D7A;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#id_username {
+  margin-bottom: 10px;
+}
+
+/* Name row (first + last name side-by-side) */
+.name-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.name-row .half {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-row .half input {
+  width: 100%;
+  display: block;
+}
+
+/* Field errors */
+.field-error {
+  color: #d9534f;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* Button rows */
+.btn-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Horizontal buttons for signup */
+.btn-row.horizontal {
+  margin-top: 50px;
+  flex-direction: row;
+}
+ 
+/* Vertical buttons for login */
+.btn-row.vertical {
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  gap: 12px;
+  margin-top: 90px;
+}
+
+/* Buttons style */
+.btn-row .submit-btn,
+.btn-row .alt-btn {
+  flex: 1;
+  text-align: center;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 100%;
+  max-width: 350px; /* optional for vertical */
+}
+
+/* Submit buttons */
+.btn-row .submit-btn {
+  background: #800000;
+  height: 50px;
+  color: #FFF;
+  border: 1px solid transparent;
+}
+
+.btn-row .submit-btn:hover {
+  background: #fff;
+  color: #10182F;
+  border-color: #10182F;
+}
+
+/* Alt buttons (links) */
+.btn-row .alt-btn {
+  background: #F0F2FB;
+  color: #10182F;
+  border: 1px solid #DAE1F5;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.btn-row .alt-btn:hover {
+  background: #800000;
+  color: #FFF;
+  border-color: #10182F;
+}
+
+/* Extra links (forgot password) */
+.btn-row a {
+  color: #800000;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.btn-row a:hover {
+  text-decoration: underline;
+}
+
+/* Logo container */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.logo-container h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #800000;
+}
+
+.logo-container p {
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: #cccccc;
+}
+
+/* Optional reusable form button class */
+.form-btn {
+  display: block;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+label .icon {
+    width: 16px;        /* small size */
+    height: 16px;
+    vertical-align: middle;  /* align with text */
+    margin-right: 5px;  /* space between icon and text */
+}
