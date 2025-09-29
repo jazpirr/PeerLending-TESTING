@@ -182,6 +182,12 @@ body {
   width: 100%;
   display: block;
 }
+.name-row .third {
+  flex: 1;              
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
 
 /* Field errors */
 .field-error {

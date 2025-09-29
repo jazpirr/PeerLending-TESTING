@@ -100,6 +100,32 @@
         </div>
     </div>
 
+    <div class="name-row">
+      <div class="third form-group">
+          <label for="{{ form.college_dept.id_for_label }}">
+              <img src="{% static 'images/department.png' %}" class="icon" alt="College Icon">
+              College Department
+          </label>
+          {{ form.college_dept }}
+      </div>
+
+      <div class="third form-group">
+          <label for="{{ form.course.id_for_label }}">
+              <img src="{% static 'images/course.png' %}" class="icon" alt="Course Icon">
+              Course
+          </label>
+          {{ form.course }}
+      </div>
+
+      <div class="third form-group">
+          <label for="{{ form.year_level.id_for_label }}">
+              Year Level
+          </label>
+          {{ form.year_level }}
+      </div>
+    </div>
+
+
       <div class="btn-row horizontal">
         <button type="submit" class="submit-btn">Create Account</button>
         <a class="alt-btn" href="{% url 'login' %}">Already have an account? Sign In</a>

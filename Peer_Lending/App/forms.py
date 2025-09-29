@@ -13,4 +13,7 @@ class CustomUserCreationForm(UserCreationForm):
             "password2",
             "birthday",
             "phone_number",
+            "college_dept",
+            "course",
+            "year_level",
         ]

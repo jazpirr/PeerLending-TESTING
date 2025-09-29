@@ -1,4 +1,4 @@
-# Python cache
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -9,5 +9,5 @@ venv/
 # SQLite database
 db.sqlite3
 
-# VS Code settings
+# VS Code
 .vscode/
